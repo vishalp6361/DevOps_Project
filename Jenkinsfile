@@ -1,25 +1,28 @@
 pipeline{
-   agent any
+   agent none
    stages{
     stage( 'checkout' ){
-	    steps{
+		steps{
 		 git branch: 'main', url: 'https://github.com/vishalp6361/DevOps_Project.git'
 		 }
 	   }
 	   
 	stage ('build'){
+		agent ( label 'Slave' )
 	  steps{
 	     sh "echo this stage is Build"
 	  }
 	 }
 	stage ('Test'){
+	agent ( label 'Slave-2' )
 	  steps{
 	     sh "echo this stage is Test"
 		}
 	}	 
 	stage ('Deploy'){
+	agent ( label 'Slave-3' )
 	  steps{
-	     sh "echo this stage is Deploy"
+	     sh "echo this  stage is Deploy"
 		 }
 	  }
 	}
