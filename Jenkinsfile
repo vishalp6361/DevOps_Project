@@ -2,6 +2,7 @@ pipeline{
    agent none
    stages{
     stage  ('checkout'){
+	agent { label 'slave' }
 	steps{
 	 git branch: 'main', url: 'https://github.com/vishalp6361/DevOps_Project.git'
 		 }
