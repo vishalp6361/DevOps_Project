@@ -8,7 +8,7 @@ pipeline{
 	   }
 	   
 	stage ('build'){
-		agent ( label 'slave1' )
+		agent ( label 'slave' )
 	  steps{
 	     sh "echo this stage is Build"
 	  }
