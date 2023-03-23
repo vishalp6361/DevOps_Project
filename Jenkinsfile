@@ -8,19 +8,19 @@ pipeline{
 	   }
 	   
 	stage ('build'){
-		agent ( label 'Slave' )
+		agent ( label 'slave1' )
 	  steps{
 	     sh "echo this stage is Build"
 	  }
 	 }
 	stage ('Test'){
-	agent ( label 'Slave-2' )
+	agent ( label 'slave2' )
 	  steps{
 	     sh "echo this stage is Test"
 		}
 	}	 
 	stage ('Deploy'){
-	agent ( label 'Slave-3' )
+	agent ( label 'slave3' )
 	  steps{
 	     sh "echo this  stage is Deploy"
 		 }
