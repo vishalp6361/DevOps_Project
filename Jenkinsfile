@@ -1,7 +1,7 @@
 pipeline{
    agent none
    stages{
-    stage( 'checkout' ){
+    stage  ('checkout'){
 	steps{
 	 git branch: 'main', url: 'https://github.com/vishalp6361/DevOps_Project.git'
 		 }
